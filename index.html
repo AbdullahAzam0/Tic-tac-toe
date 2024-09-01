@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-tac-toe</title>
+    <link rel="icon" href="logo.webp" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <h1>Let's Play</h1>
+      <div class="container">
+        <div class="game">
+          <!-- Create 9 boxes for the Tic Tac Toe grid -->
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+          <button class="box"></button>
+        </div>
+      </div>
+      <button id="reset-btn">Reset Game</button>
+
+      <!-- Player Name Modal -->
+      <div id="player-modal" class="modal">
+        <div class="modal-content">
+          <h2>Enter Players Name</h2>
+          <input
+            type="text"
+            id="player1"
+            placeholder="Player 1 Name"
+            required
+          />
+          <input
+            type="text"
+            id="player2"
+            placeholder="Player 2 Name"
+            required
+          />
+          <button id="start-game-btn">Start Game</button>
+        </div>
+      </div>
+
+      <!-- Winner Modal -->
+      <div id="winner-modal" class="modal">
+        <div class="modal-content">
+          <h2 id="winner-text"></h2>
+          <button id="close-winner-modal-btn">Close</button>
+        </div>
+      </div>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

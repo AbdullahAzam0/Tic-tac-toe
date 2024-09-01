@@ -1,0 +1,185 @@
+/* Reset default styles for all elements */
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  /* Style for the body */
+  body {
+    background-color: #333; /* Set background color to dark gray */
+    font-family: "Arial", sans-serif; /* Set font family */
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  /* Main container for the game */
+  main {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Full width */
+    max-width: 600px; /* Max width for larger screens */
+    margin: 20px; /* Margin around the main container */
+    padding: 20px; /* Inner padding */
+    background-color: #f9f9f9; /* Light background for main container */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Heading style */
+  h1 {
+    font-size: 2rem; /* Font size for heading */
+    color: #222; /* Dark text color */
+    margin-bottom: 20px; /* Space below the heading */
+  }
+  
+  /* Container for the game grid */
+  .container {
+    display: flex; /* Flexbox for centering the game */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 20px; /* Space below the container */
+  }
+  
+  /* Game grid layout */
+  .game {
+    display: grid; /* Use grid layout for the game boxes */
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 10px; /* Space between grid items */
+  }
+  
+  /* Style for each game box */
+  .box {
+    height: 80px; /* Fixed height */
+    width: 80px; /* Fixed width */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 2rem; /* Large font size for X and O */
+    color: #b0413c; /* Color for the text */
+    background-color: #ffff67; /* Background color for boxes */
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.2s, background-color 0.2s; /* Smooth transition effects */
+  }
+  
+  /* Style when a box is clicked */
+  .box:active {
+    transform: scale(0.95); /* Slightly shrink the box */
+    background-color: #f5c453; /* Change background color */
+  }
+  
+  /* Style for the reset button */
+  #reset-btn {
+    padding: 12px 24px; /* Padding around button text */
+    font-size: 1.25rem; /* Font size for button text */
+    background-color: #191913; /* Dark background color */
+    color: white; /* White text color */
+    border-radius: 10px; /* Rounded corners */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  
+  /* Style when hovering over the reset button */
+  #reset-btn:hover {
+    background-color: #333; /* Darker background on hover */
+  }
+  
+  /* Style for the modal (pop-up) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position to cover the viewport */
+    z-index: 1; /* Above other elements */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+    justify-content: center; /* Center modal content horizontally */
+    align-items: center; /* Center modal content vertically */
+    backdrop-filter: blur(5px); /* Blur the background behind the modal */
+  }
+  
+  /* Style for modal content */
+  .modal-content {
+    background-color: #ffffff; /* White background for modal */
+    padding: 30px; /* Inner padding */
+    border-radius: 20px; /* Rounded corners */
+    text-align: center; /* Center text inside modal */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width for larger screens */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    animation: fadeIn 0.5s; /* Fade in animation */
+  }
+  
+  /* Style for winner text */
+  #winner-text {
+    font-size: 1.75rem; /* Font size for winner text */
+    color: #4caf50; /* Green color for winner text */
+    margin-bottom: 20px; /* Space below winner text */
+    font-weight: bold; /* Bold text */
+  }
+  
+  /* Style for the close button in the winner modal */
+  #close-winner-modal-btn {
+    padding: 10px 20px; /* Padding around button text */
+    margin-top: 20px; /* Space above button */
+    background-color: #4caf50; /* Match the winner text color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  
+  /* Style when hovering over the close button */
+  #close-winner-modal-btn:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+  }
+  
+  /* Animation for modal appearance */
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start invisible */
+      transform: translateY(-20px); /* Start slightly above */
+    }
+    to {
+      opacity: 1; /* End fully visible */
+      transform: translateY(0); /* End in original position */
+    }
+  }
+  
+  /* Style for input fields in the modal */
+  .modal input {
+    margin: 10px 0; /* Space above and below inputs */
+    padding: 10px; /* Inner padding for inputs */
+    width: 80%; /* Responsive width */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border color */
+    font-size: 1rem; /* Font size for input text */
+  }
+  
+  /* Style for the start game button */
+  #start-game-btn,
+  #close-winner-modal-btn {
+    padding: 10px 20px; /* Padding around button text */
+    margin-top: 20px; /* Space above button */
+    background-color: #191913; /* Dark background color */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+  }
+  
+  /* Style when hovering over the start game and close buttons */
+  #start-game-btn:hover,
+  #close-winner-modal-btn:hover {
+    background-color: #333; /* Darker background on hover */
+  }
+  
